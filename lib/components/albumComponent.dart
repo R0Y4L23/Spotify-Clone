@@ -17,40 +17,44 @@ class AlbumComponent extends StatelessWidget {
       return dHeight * (percent / 100);
     }
 
-    return Padding(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image.asset(
-              "assets/locked_away.png",
-              width: adjustedWidth(40),
-              height: adjustedHeight(20),
-            ),
-            SizedBox(
-              height: adjustedHeight(1),
-            ),
-            Text(
-              "Locked Away",
-              style: TextStyle(
-                  fontSize: adjustedWidth(4),
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            SizedBox(
-              width: adjustedWidth(40),
-              child: Text(
-                "Album . Adam Levine , Rock City",
-                style: TextStyle(
-                    fontSize: adjustedWidth(4),
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey.shade600),
-              ),
-            ),
-          ],
-        ));
+    return InkWell(
+        onTap: () {
+          Navigator.pushReplacementNamed(context, "/album");
+        },
+        child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Image.asset(
+                  "assets/locked_away.png",
+                  width: adjustedWidth(40),
+                  height: adjustedHeight(20),
+                ),
+                SizedBox(
+                  height: adjustedHeight(1),
+                ),
+                Text(
+                  "Locked Away",
+                  style: TextStyle(
+                      fontSize: adjustedWidth(4),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                SizedBox(
+                  width: adjustedWidth(40),
+                  child: Text(
+                    "Album . Adam Levine , Rock City",
+                    style: TextStyle(
+                        fontSize: adjustedWidth(4),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade600),
+                  ),
+                ),
+              ],
+            )));
   }
 }

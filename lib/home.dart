@@ -12,11 +12,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final List<String> _list = ["/", "/search", "/library", "/library"];
   int selectedIndex = 0;
   void onItemTapped(int index) {
     setState(() {
       selectedIndex = index;
     });
+    Navigator.pushReplacementNamed(context, _list[index]);
   }
 
   @override
