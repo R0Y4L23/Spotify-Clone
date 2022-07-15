@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_element
 
 import "package:flutter/material.dart";
+import "./components/albumMusicComponent.dart";
+import "./components/albumComponent.dart";
 
 class Album extends StatefulWidget {
   Album({Key? key}) : super(key: key);
@@ -10,6 +12,13 @@ class Album extends StatefulWidget {
 }
 
 class _AlbumState extends State<Album> {
+  List songs = [
+    {"name": "Dreams", "artist": 'Bazzi'},
+    {"name": "Soarin", "artist": 'Bazzi'},
+    {"name": "Myself", "artist": 'Bazzi'},
+    {"name": "Star", "artist": 'Bazzi'},
+    {"name": "Why", "artist": 'Bazzi'},
+  ];
   @override
   Widget build(BuildContext context) {
     var dWidth = MediaQuery.of(context).size.width;
@@ -65,7 +74,7 @@ class _AlbumState extends State<Album> {
                 Padding(
                   padding: EdgeInsets.only(left: adjustedWidth(8)),
                   child: Text(
-                    "Mine",
+                    "COSMIC",
                     style: TextStyle(
                         fontSize: adjustedWidth(8), color: Colors.white),
                   ),
@@ -126,8 +135,85 @@ class _AlbumState extends State<Album> {
                           size: adjustedWidth(5),
                         ),
                       ),
-                    )
+                    ),
                   ],
+                ),
+                SizedBox(height: adjustedHeight(1.5)),
+                Wrap(
+                  spacing: adjustedWidth(2),
+                  runSpacing: adjustedHeight(0.05),
+                  children: [
+                    for (var song in songs)
+                      AlbumMusicComponent(
+                        song: song,
+                      )
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: adjustedWidth(4), top: adjustedHeight(1)),
+                  child: Text(
+                    "April 12, 2018",
+                    style: TextStyle(
+                        fontSize: adjustedWidth(4), color: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: adjustedWidth(4), top: adjustedHeight(1)),
+                  child: Text(
+                    "16 songs . 42 min 8 sec",
+                    style: TextStyle(
+                        fontSize: adjustedWidth(4), color: Colors.white),
+                  ),
+                ),
+                SizedBox(height: adjustedHeight(2)),
+                ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage("assets/mine.png"),
+                    radius: adjustedWidth(5),
+                  ),
+                  title: Text(
+                    "Bazzi",
+                    style: TextStyle(
+                        fontSize: adjustedWidth(4), color: Colors.white),
+                  ),
+                ),
+                SizedBox(
+                  height: adjustedHeight(1),
+                ),
+                Text(
+                  "    You might also like",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: adjustedWidth(4),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  width: adjustedWidth(100),
+                  height: adjustedHeight(38),
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      AlbumComponent(),
+                      AlbumComponent(),
+                      AlbumComponent(),
+                      AlbumComponent(),
+                      AlbumComponent(),
+                    ],
+                  ),
+                ),
+                Text(
+                  "    © 2018",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: adjustedWidth(4),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: adjustedHeight(1),
                 )
               ],
             ))));

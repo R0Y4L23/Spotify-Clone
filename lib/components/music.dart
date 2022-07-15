@@ -11,31 +11,38 @@ class Music extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey.shade900,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      width: 160,
-      child: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Image.asset(
-              "assets/$imageName",
-              width: 50,
-              height: 50,
+    return InkWell(
+      onTap: () {
+        Navigator.pushReplacementNamed(context, "/album");
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey.shade900,
+          borderRadius: BorderRadius.circular(5),
+        ),
+        width: 160,
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: Image.asset(
+                "assets/$imageName",
+                width: 50,
+                height: 50,
+              ),
             ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Text(
-            songName,
-            style: TextStyle(
-                fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
-          )
-        ],
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              songName,
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            )
+          ],
+        ),
       ),
     );
   }
