@@ -66,20 +66,21 @@ class _LibraryState extends State<Library> {
             ),
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                  SizedBox(
-                    height: adjustedHeight(5),
-                  ),
-                  Text(
-                    "   Your Library",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: adjustedWidth(7),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ]))));
+                      SizedBox(
+                        height: adjustedHeight(5),
+                      ),
+                      Text(
+                        "   Your Library",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: adjustedWidth(7),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ]))));
   }
 }

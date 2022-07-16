@@ -67,137 +67,138 @@ class _SearchState extends State<Search> {
             ),
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                  SizedBox(
-                    height: adjustedHeight(5),
-                  ),
-                  Text(
-                    "   Search",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: adjustedWidth(7),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Padding(
-                      padding: EdgeInsets.all(adjustedHeight(2.5)),
-                      child: Container(
-                        height: 40,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.search,
-                              color: Colors.black,
-                              size: adjustedWidth(10),
-                            ),
-                            SizedBox(width: adjustedWidth(2)),
-                            Text(
-                              'Artist,songs, or podcasts',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: adjustedWidth(4.5)),
-                            )
-                          ],
+                      SizedBox(
+                        height: adjustedHeight(5),
+                      ),
+                      Text(
+                        "   Search",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: adjustedWidth(7),
+                          fontWeight: FontWeight.bold,
                         ),
-                      )),
-                  Text(
-                    "      Your Top Genres",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: adjustedWidth(4),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: adjustedHeight(3),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SearchComponent(),
-                      SizedBox(width: adjustedWidth(3)),
-                      SearchComponent()
-                    ],
-                  ),
-                  SizedBox(
-                    height: adjustedHeight(1.5),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SearchComponent(),
-                      SizedBox(width: adjustedWidth(3)),
-                      SearchComponent()
-                    ],
-                  ),
-                  SizedBox(height: adjustedHeight(6)),
-                  Text(
-                    "      Browse All",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: adjustedWidth(4),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: adjustedHeight(3),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SearchComponent(),
-                      SizedBox(width: adjustedWidth(3)),
-                      SearchComponent()
-                    ],
-                  ),
-                  SizedBox(
-                    height: adjustedHeight(1.5),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SearchComponent(),
-                      SizedBox(width: adjustedWidth(3)),
-                      SearchComponent()
-                    ],
-                  ),
-                  SizedBox(
-                    height: adjustedHeight(1.5),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SearchComponent(),
-                      SizedBox(width: adjustedWidth(3)),
-                      SearchComponent()
-                    ],
-                  ),
-                  SizedBox(
-                    height: adjustedHeight(1.5),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SearchComponent(),
-                      SizedBox(width: adjustedWidth(3)),
-                      SearchComponent()
-                    ],
-                  ),
-                  SizedBox(height: adjustedHeight(10))
-                ]))));
+                      ),
+                      Padding(
+                          padding: EdgeInsets.all(adjustedHeight(2.5)),
+                          child: Container(
+                            height: 40,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.search,
+                                  color: Colors.black,
+                                  size: adjustedWidth(10),
+                                ),
+                                SizedBox(width: adjustedWidth(2)),
+                                Text(
+                                  'Artist,songs, or podcasts',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: adjustedWidth(4.5)),
+                                )
+                              ],
+                            ),
+                          )),
+                      Text(
+                        "      Your Top Genres",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: adjustedWidth(4),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(3),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SearchComponent(),
+                          SizedBox(width: adjustedWidth(3)),
+                          SearchComponent()
+                        ],
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(1.5),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SearchComponent(),
+                          SizedBox(width: adjustedWidth(3)),
+                          SearchComponent()
+                        ],
+                      ),
+                      SizedBox(height: adjustedHeight(6)),
+                      Text(
+                        "      Browse All",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: adjustedWidth(4),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(3),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SearchComponent(),
+                          SizedBox(width: adjustedWidth(3)),
+                          SearchComponent()
+                        ],
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(1.5),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SearchComponent(),
+                          SizedBox(width: adjustedWidth(3)),
+                          SearchComponent()
+                        ],
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(1.5),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SearchComponent(),
+                          SizedBox(width: adjustedWidth(3)),
+                          SearchComponent()
+                        ],
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(1.5),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SearchComponent(),
+                          SizedBox(width: adjustedWidth(3)),
+                          SearchComponent()
+                        ],
+                      ),
+                      SizedBox(height: adjustedHeight(10))
+                    ]))));
   }
 }

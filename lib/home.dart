@@ -71,6 +71,7 @@ class _HomeState extends State<Home> {
             body: Stack(
               children: [
                 SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
