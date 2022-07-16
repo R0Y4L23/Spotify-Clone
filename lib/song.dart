@@ -90,6 +90,54 @@ class _SongState extends State<Song> {
                 SizedBox(
                   height: adjustedHeight(4),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.skip_previous,
+                            color: Colors.white, size: adjustedWidth(7))),
+                    SizedBox(width: adjustedWidth(2)),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.play_arrow,
+                            color: Colors.white, size: adjustedWidth(7))),
+                    SizedBox(width: adjustedWidth(2)),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.pause,
+                            color: Colors.white, size: adjustedWidth(7))),
+                    SizedBox(width: adjustedWidth(2)),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.stop,
+                            color: Colors.white, size: adjustedWidth(7))),
+                    SizedBox(width: adjustedWidth(2)),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.skip_next,
+                            color: Colors.white, size: adjustedWidth(7))),
+                  ],
+                ),
+                ListTile(
+                    leading: Icon(Icons.favorite, color: Colors.white),
+                    trailing: SizedBox(
+                      width: adjustedWidth(28),
+                      child: Row(
+                        children: [
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.playlist_add,
+                                  color: Colors.white, size: adjustedWidth(7))),
+                          SizedBox(width: adjustedWidth(1)),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.more_vert,
+                                  color: Colors.white, size: adjustedWidth(7))),
+                        ],
+                      ),
+                    )),
               ],
             ))));
   }

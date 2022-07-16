@@ -3,6 +3,7 @@
 import "package:flutter/material.dart";
 import './components/music.dart';
 import "./components/albumComponent.dart";
+import "./components/dashboard.dart";
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -67,19 +68,120 @@ class _HomeState extends State<Home> {
               onTap: onItemTapped,
             ),
             backgroundColor: Colors.transparent,
-            body: SingleChildScrollView(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            body: Stack(
               children: [
-                SizedBox(
-                  height: adjustedHeight(5),
-                ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: adjustedHeight(5),
+                      ),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Good evening",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: adjustedWidth(7),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              width: adjustedWidth(15),
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.notification_important,
+                                color: Colors.white,
+                                size: adjustedWidth(7),
+                              ),
+                            ),
+                            SizedBox(
+                              width: adjustedWidth(5),
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.lock_clock,
+                                color: Colors.white,
+                                size: adjustedWidth(7),
+                              ),
+                            ),
+                            SizedBox(
+                              width: adjustedWidth(5),
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.settings,
+                                color: Colors.white,
+                                size: adjustedWidth(7),
+                              ),
+                            ),
+                          ]),
+                      SizedBox(
+                        height: adjustedHeight(2),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Music(
+                            imageName: "locked_away.png",
+                            songName: "Locked Away",
+                          ),
+                          SizedBox(width: adjustedWidth(5)),
+                          Music(
+                            imageName: "when_can_i_see_you_again.png",
+                            songName: "When Can I...",
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(2),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Music(
+                            imageName: "million_ways.png",
+                            songName: "Million Ways",
+                          ),
+                          SizedBox(width: adjustedWidth(5)),
+                          Music(
+                            imageName: "mine.png",
+                            songName: "Mine",
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(2),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Music(
+                            imageName: "playdate.png",
+                            songName: "Playdate",
+                          ),
+                          SizedBox(width: adjustedWidth(5)),
+                          Music(
+                            imageName: "bad_liar.png",
+                            songName: "Bad Liar",
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: adjustedHeight(2),
+                      ),
                       Text(
-                        "Good evening",
+                        "   Episodes For You",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: adjustedWidth(7),
@@ -87,169 +189,79 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       SizedBox(
-                        width: adjustedWidth(15),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.notification_important,
-                          color: Colors.white,
-                          size: adjustedWidth(7),
+                        width: adjustedWidth(100),
+                        height: adjustedHeight(38),
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                          ],
                         ),
                       ),
                       SizedBox(
-                        width: adjustedWidth(5),
+                        height: adjustedHeight(2),
                       ),
-                      InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.lock_clock,
+                      Text(
+                        "   Recommended For today",
+                        style: TextStyle(
                           color: Colors.white,
-                          size: adjustedWidth(7),
+                          fontSize: adjustedWidth(7),
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(
-                        width: adjustedWidth(5),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.settings,
-                          color: Colors.white,
-                          size: adjustedWidth(7),
+                        width: adjustedWidth(100),
+                        height: adjustedHeight(38),
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                          ],
                         ),
                       ),
-                    ]),
-                SizedBox(
-                  height: adjustedHeight(2),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Music(
-                      imageName: "locked_away.png",
-                      songName: "Locked Away",
-                    ),
-                    SizedBox(width: adjustedWidth(5)),
-                    Music(
-                      imageName: "when_can_i_see_you_again.png",
-                      songName: "When Can I...",
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: adjustedHeight(2),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Music(
-                      imageName: "million_ways.png",
-                      songName: "Million Ways",
-                    ),
-                    SizedBox(width: adjustedWidth(5)),
-                    Music(
-                      imageName: "mine.png",
-                      songName: "Mine",
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: adjustedHeight(2),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Music(
-                      imageName: "playdate.png",
-                      songName: "Playdate",
-                    ),
-                    SizedBox(width: adjustedWidth(5)),
-                    Music(
-                      imageName: "bad_liar.png",
-                      songName: "Bad Liar",
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: adjustedHeight(2),
-                ),
-                Text(
-                  "   Episodes For You",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: adjustedWidth(7),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  width: adjustedWidth(100),
-                  height: adjustedHeight(38),
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
+                      SizedBox(
+                        height: adjustedHeight(2),
+                      ),
+                      Text(
+                        "   Recently Played",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: adjustedWidth(7),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        width: adjustedWidth(100),
+                        height: adjustedHeight(38),
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                            AlbumComponent(),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: adjustedHeight(2),
-                ),
-                Text(
-                  "   Recommended For today",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: adjustedWidth(7),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
+                Positioned(
+                  bottom: adjustedWidth(0),
                   width: adjustedWidth(100),
-                  height: adjustedHeight(38),
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: adjustedHeight(2),
-                ),
-                Text(
-                  "   Recently Played",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: adjustedWidth(7),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  width: adjustedWidth(100),
-                  height: adjustedHeight(38),
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                      AlbumComponent(),
-                    ],
-                  ),
+                  height: adjustedHeight(11.5),
+                  child: Dashboard(),
                 )
               ],
-            ))));
+            )));
   }
 }
